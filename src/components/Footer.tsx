@@ -50,7 +50,7 @@ const Footer = () => {
                 Step into the heart of the Himalayas with curated monastery experiences that showcase Sikkim's timeless Buddhist traditions, sacred temples, and breathtaking landscapes guided by local experts.
               </p>
               <div className="text-sm text-muted-foreground">
-                <p className="mb-2">© 2024 Sikkim Monasteries. All rights reserved.</p>
+                <p className="mb-2">© 2025 Sikkim Monasteries. All rights reserved.</p>
                 <p className="font-medium text-foreground">
                   In partnership with <span className="text-accent">Sikkim Tourism Department, Government of Sikkim</span>
                 </p>
