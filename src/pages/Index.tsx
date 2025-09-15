@@ -5,6 +5,7 @@ import MonasteriesSection from "@/components/MonasteriesSection";
 import WhyVisitSection from "@/components/WhyVisitSection";
 import GallerySection from "@/components/GallerySection";
 import FAQSection from "@/components/FAQSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
         <GallerySection />
         <FAQSection />
       </main>
+      <Footer />
     </div>
   );
 };
