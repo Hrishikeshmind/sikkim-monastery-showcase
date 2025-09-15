@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/rongtok-monastery-hero.jpg";
+import heroImage from "@/assets/rumtek-monastery-hero.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="Rongtok Monastery with Himalayan mountains in background"
+          alt="Rumtek Monastery with majestic Himalayan mountains and terraced fields in Sikkim"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
