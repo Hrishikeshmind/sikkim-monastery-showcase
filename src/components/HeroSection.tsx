@@ -24,8 +24,8 @@ const HeroSection = () => {
       <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
         <p className="text-white/90 text-lg md:text-xl mb-4 italic">Discover Sikkim</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          A Journey of <span className="text-yellow-300">Spirituality</span>,<br />
-          <span className="text-blue-200">Serenity</span>, and Natural Beauty
+          A Journey of <span className="text-accent">Spirituality</span>,<br />
+          <span className="text-white/90">Serenity</span>, and Natural Beauty
         </h1>
         <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Step into the heart of the Himalayas with curated monastery experiences that showcase timeless traditions, sacred temples, and breathtaking landscapes.
