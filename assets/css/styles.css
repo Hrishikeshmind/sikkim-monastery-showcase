@@ -1,0 +1,304 @@
+/*
+  Travalgo – Hero Landing Page Styles
+  Fonts: Playfair Display (headings), Inter (UI), Great Vibes (logo)
+*/
+
+:root {
+  --hero-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1920&auto=format&fit=crop');
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.7);
+  --soft: rgba(255, 255, 255, 0.32);
+  --ring: rgba(255, 255, 255, 0.22);
+  --bg-dim: rgba(6, 20, 33, 0.45);
+  --glass: rgba(255, 255, 255, 0.12);
+  --glass-stroke: rgba(255, 255, 255, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: #0b1926;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  background-image: linear-gradient(var(--bg-dim), var(--bg-dim)), var(--hero-image);
+  background-size: cover;
+  background-position: center 30%;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 3;
+  padding: 16px 32px;
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  font-family: "Great Vibes", "Brush Script MT", cursive;
+  font-size: 34px;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+}
+
+.nav a:hover { color: #fff; }
+
+.header__contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.contact__item:hover { color: #fff; }
+
+.header__divider {
+  width: 1px;
+  height: 16px;
+  background: var(--soft);
+  display: inline-block;
+}
+
+/* Concentric rings overlay */
+.hero__rings::before,
+.hero__rings::after {
+  content: "";
+  position: absolute;
+  inset: 8% 12%;
+  border: 3px solid var(--ring);
+  border-radius: 50% / 40%;
+  pointer-events: none;
+}
+
+.hero__rings::after {
+  inset: 16% 20%;
+  border-width: 2px;
+  opacity: 0.6;
+}
+
+/* Left side orb and pill */
+.hero__side-orb::before {
+  content: "";
+  position: absolute;
+  left: -140px;
+  top: 36%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px solid var(--ring);
+  background: radial-gradient(closest-side, transparent 60%, rgba(255,255,255,0.03));
+}
+
+.pill {
+  position: absolute;
+  left: 28px;
+  top: 48%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px 10px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e9edf3;
+  border: 1px solid var(--glass-stroke);
+  backdrop-filter: blur(4px);
+}
+
+.pill__icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+}
+
+.pill__text { font-weight: 600; font-size: 18px; letter-spacing: 0.5px; }
+
+/* Centered hero copy */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 6vh;
+}
+
+.hero__title {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 900;
+  font-size: clamp(34px, 5.6vw, 96px);
+  letter-spacing: 4px;
+  margin: 0 16px 8px;
+}
+
+.hero__subtitle {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.6vw, 44px);
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin: 0 16px 28px;
+}
+
+.hero__slides {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.hero__slides button {
+  all: unset;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hero__slides button.is-active { color: #fff; }
+
+/* Glass search bar */
+.searchbar {
+  position: absolute;
+  left: 50%;
+  bottom: 42px;
+  transform: translateX(-50%);
+  width: min(1100px, 92vw);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+  background: var(--glass);
+  border: 1px solid var(--glass-stroke);
+  border-radius: 12px;
+  padding: 14px 14px 14px 18px;
+  backdrop-filter: blur(8px) saturate(120%);
+  z-index: 3;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--glass-stroke);
+}
+
+.filter__icon { opacity: 0.9; }
+
+.filter__label {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.searchbar__field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: #1b2430;
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-width: 200px;
+}
+
+.searchbar__field input {
+  border: none;
+  outline: none;
+  width: 160px;
+  font-weight: 600;
+}
+
+.searchbar__icon {
+  color: #2a3442;
+}
+
+/* Corner star (diamond) */
+.corner-star {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  width: 22px;
+  height: 22px;
+  transform: rotate(45deg);
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,0.6) 35%, rgba(255,255,255,0.15) 70%);
+  border: 1px solid var(--soft);
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .header__inner { grid-template-columns: 160px 1fr auto; }
+  .nav { gap: 18px; }
+}
+
+@media (max-width: 800px) {
+  .nav { display: none; }
+  .filters { grid-template-columns: 1fr; }
+  .searchbar { grid-template-columns: 1fr; row-gap: 12px; }
+  .hero__title { letter-spacing: 2px; }
+  .hero__side-orb::before { left: -180px; top: 40%; width: 280px; height: 280px; }
+  .pill { top: 56%; }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 12px 16px; }
+  .logo { font-size: 28px; }
+  .hero__subtitle { font-size: 18px; letter-spacing: 2px; }
+  .searchbar__field input { width: 100%; }
+}
+
