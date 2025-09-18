@@ -1,45 +1,73 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/rumtek-monastery-hero.jpg";
+import heroImage from "@/assets/rongtok-monastery-hero.jpg";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Rumtek Monastery with majestic Himalayan mountains and terraced fields in Sikkim"
+        <img
+          src={heroImage}
+          alt="Himalayan mountains and monastery"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
-      
-      {/* Gradient Overlay for extra beauty */}
-      <div 
-        className="absolute inset-0 z-10 opacity-60"
-        style={{ background: 'var(--hero-gradient)' }}
-      ></div>
-      
-      {/* Content */}
-      <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
-        <p className="text-white/90 text-lg md:text-xl mb-4 italic">Discover Sikkim</p>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          A Journey of <span className="text-accent">Spirituality</span>,<br />
-          <span className="text-white/90">Serenity</span>, and Natural Beauty
+
+      {/* Concentric rings overlay */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160vmin] h-[160vmin] rounded-full border border-white/15" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vmin] h-[120vmin] rounded-full border border-white/15" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vmin] h-[85vmin] rounded-full border border-white/15" />
+      </div>
+
+      {/* Left Tag (carousel location) */}
+      <div className="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 z-20">
+        <div className="flex items-center gap-3 text-white/85">
+          <button className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10">◀</button>
+          <span className="text-xl md:text-2xl">Kashmir</span>
+        </div>
+      </div>
+
+      {/* Center Content */}
+      <div className="relative z-20 text-center max-w-[1200px] mx-auto px-6">
+        <h1 className="text-white font-heading font-extrabold tracking-wide leading-none mb-6" style={{fontFamily: 'Playfair Display'}}>
+          <span className="block text-4xl md:text-6xl lg:text-[80px]">EXPERIENCE PEACE</span>
         </h1>
-        <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          Step into the heart of the Himalayas with curated monastery experiences that showcase timeless traditions, sacred temples, and breathtaking landscapes.
-        </p>
-        <Button variant="hero" size="xl" className="font-semibold">
-          Explore Sacred Monasteries
-        </Button>
+        <h2 className="text-white/95 font-heading leading-none mb-8" style={{fontFamily: 'Playfair Display'}}>
+          <span className="block text-3xl md:text-5xl lg:text-[56px]">EXPLORE HERITAGE</span>
+        </h2>
+
+        {/* Dots pagination */}
+        <div className="flex items-center justify-center gap-6 text-white/80 mb-8">
+          {['01','02','03','04','05'].map((n, i) => (
+            <span key={n} className={i===0 ? 'font-semibold text-white' : ''}>{n}</span>
+          ))}
+        </div>
+
+        {/* Search bar */}
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr_auto] gap-3 bg-white/10 backdrop-blur-md rounded-full p-2 md:p-3 border border-white/20">
+            <button className="text-left text-white/90 px-4 py-3 rounded-full hover:bg-white/10">
+              <span className="text-sm block opacity-80">Destination</span>
+              <span className="text-base">Choose a place</span>
+            </button>
+            <button className="text-left text-white/90 px-4 py-3 rounded-full hover:bg-white/10">
+              <span className="text-sm block opacity-80">Activities & Themes</span>
+              <span className="text-base">All activities</span>
+            </button>
+            <button className="text-left text-white/90 px-4 py-3 rounded-full hover:bg-white/10">
+              <span className="text-sm block opacity-80">Average Price</span>
+              <span className="text-base">$500 - $1500</span>
+            </button>
+            <Button className="rounded-full px-6 md:px-8 bg-white text-gray-900 hover:bg-white/90">Search</Button>
+          </div>
+        </div>
       </div>
-      
-      {/* Floating elements */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+
+      {/* decorative star bottom-right */}
+      <div className="absolute bottom-6 right-6 z-20">
+        <div className="w-6 h-6 rotate-45 bg-white/80 rounded-sm"></div>
       </div>
     </section>
   );
